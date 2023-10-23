@@ -59,7 +59,14 @@ function pluralizeRecords(n) {
 
 function fib(n) {
     if (n < 0 || n > 1000) return "ne nado tak"
-    return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+    let a = 1;
+    let b = 1;
+    for (let i = 3; i <= n; i++) {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
 }
 
 const powXInput = document.getElementById("powx_input")
